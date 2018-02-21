@@ -27,6 +27,7 @@ app.set('view engine', '.hbs');
 
 app.enable('view cache');
 
+//Routes
 require('./routes')(app);
 
 
