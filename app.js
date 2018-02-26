@@ -1,8 +1,6 @@
 const express = require('express');
-const exphbs  = require('express-handlebars');
 const path = require('path');
 const fs = require('fs');
-
 
 const app = express();
 
@@ -13,32 +11,20 @@ var log = function(entry) {
 const publicPath = path.join(__dirname, '/public');
 app.use('/', express.static(publicPath));
 
-const hbs = exphbs.create({
-    extname: '.hbs',
-    // Specify helpers which are only registered on this instance. 
-    helpers: {
-        foo: function () { return 'FOO!'; },
-        bar: function () { return 'BAR!'; }
-    }
-});
 
-app.engine('.hbs', hbs.engine);
-app.set('view engine', '.hbs');
+app.engine('jsx', require('express-react-views').createEngine());
 
-app.enable('view cache');
+app.set('view engine', '.jsx');
+
+
+// app.enable('view cache');
 
 //Routes
 require('./routes')(app);
 
 
-
-
 var port = process.env.PORT || 3000;
 app.listen(port, () => console.log('Example app listening on port ' + port ));
-
-
-
-
 
 
 
