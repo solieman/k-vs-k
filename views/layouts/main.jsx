@@ -21,7 +21,7 @@ var DefaultLayout = createReactClass({
                     <a href="/"><button className="btn btn-success">Home</button></a>
                     <a href="/leaderboard"><button className="btn btn-success">LeaderBoard</button></a>
                     <a href="/"><button className="btn btn-success">Schedule</button></a>
-                    <a href="/"><button className="btn btn-success">About</button></a>
+                    <a href="/about"><button className="btn btn-success">About</button></a>
                     <a href="/"><button className="btn btn-success">Contact Us</button></a>
                 </div>
                 
