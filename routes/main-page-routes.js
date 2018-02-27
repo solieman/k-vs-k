@@ -31,7 +31,6 @@ module.exports = function(app){
         });
     });
     
-    
     app.get('/scedule', function(req, res){
         console.log('/scedule');
         res.render('scedule', {
@@ -42,9 +41,9 @@ module.exports = function(app){
         });
     });
     
-    app.get('*', function(req, res){
-        console.log('404');
-        res.send("This is not the page that you are looking for!!!");
-    });
+    // app.get('*', function(req, res){
+    //     console.log('404');
+    //     res.send("This is not the page that you are looking for!!!");
+    // });
     
 };

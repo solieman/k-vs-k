@@ -1,3 +1,25 @@
+/* ---Variables--- */
+
+:root {
+    --theme-color: #33342D;
+    --link-color: #2299aa;
+    --layout: 1fr 1fr 1fr;
+}
+
+@media screen and (max-width: 760px) {
+    :root {
+        --layout: 1fr;
+    }
+}
+
+
+footer-div {
+    grid-template-columns: var(--layout);
+}
+
+
+
+
 body {
     color: #ffffff;
     font-family: Arial, sans-serif;
@@ -53,7 +75,7 @@ a {
 }
     
 h1 {
-    color: #33342D;
+    color: var(--theme-color);
     font-size: 500%;
     font-weight: normal;
     margin-bottom: 0em;
