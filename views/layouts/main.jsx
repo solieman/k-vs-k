@@ -17,7 +17,7 @@ var DefaultLayout = createReactClass({
             </head>
             <body>
                 <nav className="navbar navbar-default">
-                    <div class="navbar-header">
+                    <div className="navbar-header">
                         <div className="container-fluid">
                         <h1>Stay with me... Thanks Mr.Div!</h1>
                         </div>

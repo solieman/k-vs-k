@@ -5,29 +5,29 @@ const bodyParser = require('body-parser');
 const redis = require("redis");
 
 // We need RedisServer to run the server with the application at the same time
-const RedisServer = require('redis-server');
+// const RedisServer = require('redis-server');
  
-// Simply pass the port that you want a Redis server to listen on.
-const server = new RedisServer(6379);
+// // Simply pass the port that you want a Redis server to listen on.
+// const server = new RedisServer(6379);
  
-server.open((err) => {
-  if (err === null) {
-    // You may now connect a client to the Redis
-    // server bound to port 6379.
+// server.open((err) => {
+//   if (err === null) {
+//     // You may now connect a client to the Redis
+//     // server bound to port 6379.
     
-  }
-});
+//   }
+// });
 
-// Now create the redis client
-let client = redis.createClient();
+// // Now create the redis client
+// let client = redis.createClient();
 
-client.on('connect', function(){
-    console.log('Redis connected!');
-});
+// client.on('connect', function(){
+//     console.log('Redis connected!');
+// });
 
-client.on("error", function (err) {
-    console.log("Redis Error " + err);
-});
+// client.on("error", function (err) {
+//     console.log("Redis Error " + err);
+// });
 
 
 
