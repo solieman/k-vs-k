@@ -9,7 +9,9 @@
     "express-react-engine": "^1.0.0",
     "express-react-views": "^0.10.5",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "redis": "^2.8.0",
+    "redis-server": "^1.2.0"
   },
   "scripts": {
     "start": "node app.js",

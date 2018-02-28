@@ -9,6 +9,7 @@ var ProfileLayout = createReactClass({
             <DefaultLayout >
                 <div className="div">
                     <h1>This is {this.props.username} Profile</h1>
+                    <h4>Score: {this.props.scores}</h4>
                     
                 </div>
             </DefaultLayout>

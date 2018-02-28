@@ -2,12 +2,45 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const bodyParser = require('body-parser');
+const redis = require("redis");
 
+// We need RedisServer to run the server with the application at the same time
+const RedisServer = require('redis-server');
+ 
+// Simply pass the port that you want a Redis server to listen on.
+const server = new RedisServer(6379);
+ 
+server.open((err) => {
+  if (err === null) {
+    // You may now connect a client to the Redis
+    // server bound to port 6379.
+    
+  }
+});
+
+// Now create the redis client
+let client = redis.createClient();
+
+client.on('connect', function(){
+    console.log('Redis connected!');
+});
+
+client.on("error", function (err) {
+    console.log("Redis Error " + err);
+});
+
+
+
+
+
+
+
+// App
 const app = express();
 
-var log = function(entry) {
-    fs.appendFileSync('/tmp/sample-app.log', new Date().toISOString() + ' - ' + entry + '\n');
-};
+// var log = function(entry) {
+//     fs.appendFileSync('/tmp/sample-app.log', new Date().toISOString() + ' - ' + entry + '\n');
+// };
 
 const publicPath = path.join(__dirname, '/public');
 app.use('/', express.static(publicPath));
@@ -19,6 +52,7 @@ app.set('view engine', '.jsx');
 
 //body-parser
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 //Routes
 require('./routes')(app);
 

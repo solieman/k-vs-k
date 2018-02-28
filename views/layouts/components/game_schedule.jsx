@@ -9,6 +9,7 @@ class Greeting extends React.Component {
   }
 
   handleClick() {
+     this.state.message.set('new');
     alert(this.state.message);
   }
 
@@ -16,7 +17,7 @@ class Greeting extends React.Component {
     // Because `this.handleClick` is bound, we can use it as an event handler.
     return (
       <button onClick={this.handleClick}>
-        Say hello
+        Say hello {this.state.message}
       </button>
     );
   }

@@ -16,14 +16,21 @@ var DefaultLayout = createReactClass({
 
             </head>
             <body>
-                <div className="btn-info">
-                    <h1>Stay with me... Thanks Mr.Div!</h1>
-                    <a href="/"><button className="btn btn-success">Home</button></a>
-                    <a href="/leaderboard"><button className="btn btn-success">LeaderBoard</button></a>
-                    <a href="/"><button className="btn btn-success">Schedule</button></a>
-                    <a href="/about"><button className="btn btn-success">About</button></a>
-                    <a href="/"><button className="btn btn-success">Contact Us</button></a>
-                </div>
+                <nav className="navbar navbar-default">
+                    <div class="navbar-header">
+                        <div className="container-fluid">
+                        <h1>Stay with me... Thanks Mr.Div!</h1>
+                        </div>
+                        <div className="row btn-group">
+                            <button className="btn btn-success"><a href="/">Home</a></button>
+                            <button className="btn btn-success"><a href="/leaderboard">LeaderBoard</a></button>
+                            <button className="btn btn-success"><a href="/">Schedule</a></button>
+                            <button className="btn btn-success"><a href="/about">About</a></button>
+                            <button className="btn btn-success"><a href="/search">Search</a></button>
+                            <button className="btn btn-success"><a href="/">Contact Us</a></button>
+                        </div>
+                    </div>
+                </nav>
                 
                 {this.props.children}
             </body>

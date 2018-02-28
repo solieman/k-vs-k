@@ -21,4 +21,17 @@ module.exports = function(app){
             scores: 100
         });
     });
+    
+    app.post('/profile', function(req, res){
+        console.log('/profile - post');
+        console.log(req.body);
+        console.log(req.body, req.body['fname'] , req.body.lname);
+        res.render('layouts/profile', {
+            firstName: req.body.fname,
+            lastName: req.body.lname,
+            username: req.body.fname + ' ' +req.body.lname,
+            scores: 0
+        });
+    });
+    
 };
